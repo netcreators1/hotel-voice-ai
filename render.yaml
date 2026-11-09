@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: hotel-voice-ai
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node src/server.js
+    envVars:
+      - key: PORT
+        value: 5050
+      - key: FIREBASE_API_KEY
+        sync: false
+      - key: FIREBASE_AUTH_DOMAIN
+        sync: false
+      - key: FIREBASE_DATABASE_URL
+        sync: false
+      - key: FIREBASE_PROJECT_ID
+        sync: false
+      - key: TELEPHONY_PROVIDER
+        value: vobiz
+      - key: VOBIZ_AUTH_ID
+        sync: false
+      - key: VOBIZ_AUTH_SECRET
+        sync: false
+      - key: VOBIZ_PHONE_NUMBER
+        sync: false

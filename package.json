@@ -1,0 +1,26 @@
+{
+  "name": "atharva_calling",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "report": "node src/reports/eodReport.js",
+    "seed": "node src/scripts/seedHotelData.js",
+    "deploy": "firebase deploy"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "type": "module",
+  "dependencies": {
+    "axios": "^1.21.0",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "firebase": "^13.2.0",
+    "firebase-functions": "^7.4.0",
+    "node-cron": "^4.6.0",
+    "ws": "^8.22.2"
+  }
+}
