@@ -1,0 +1,27 @@
+app = "hotel-voice-ai"
+primary_region = "bom"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PORT = "5050"
+  TELEPHONY_PROVIDER = "vobiz"
+  FIREBASE_DATABASE_URL = "https://telecalling-3bd3e-default-rtdb.firebaseio.com"
+  FIREBASE_PROJECT_ID = "telecalling-3bd3e"
+  VOBIZ_AUTH_ID = "MA_UQ3I13SF"
+  VOBIZ_AUTH_SECRET = "GpkMfgbwbCSO0CZZJeA9E2jARLRuOq0jJ3Pj55wo3BfFIDrRtJfU9btQ4XG9m1V2"
+  VOBIZ_PHONE_NUMBER = "+918065354620"
+  VAPI_API_KEY = "fa6478e7-9a87-471c-999f-ea34b28d3c32"
+
+[http_service]
+  internal_port = 5050
+  force_https = true
+  auto_stop_machines = false
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ["app"]
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "512mb"
