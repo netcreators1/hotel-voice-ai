@@ -520,10 +520,10 @@ export { app, server };
 const isDirectRun = process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1];
 
 if (isDirectRun && !process.env.FUNCTION_TARGET && !process.env.K_SERVICE) {
-  server.listen(PORT, () => {
+  server.listen(PORT, "0.0.0.0", () => {
     console.log(`=======================================================`);
     console.log(`🏨 Hotel AI Voice Agent & Telephony Gateway is ONLINE!`);
-    console.log(`📡 Listening on http://localhost:${PORT}`);
+    console.log(`📡 Listening on http://0.0.0.0:${PORT}`);
     console.log(`📞 Telephony Provider: ${process.env.TELEPHONY_PROVIDER || "vobiz"}`);
     console.log(`🔥 Firebase RTDB URL: ${process.env.FIREBASE_DATABASE_URL}`);
     console.log(`🌐 Public Webhook URL: ${process.env.PUBLIC_URL}`);
